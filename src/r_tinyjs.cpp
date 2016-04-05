@@ -6,25 +6,22 @@
 
 using namespace Rcpp;
 
-CTinyJS s;
+CTinyJS ctx;
 
-//' @export
 //[[Rcpp::export]]
-void init(){
-  registerFunctions(&s);
-  registerMathFunctions(&s);
+void rcpp_ctx_init(){
+  registerFunctions(&ctx);
+  registerMathFunctions(&ctx);
 }
 
-//' @export
 //[[Rcpp::export]]
-void exec(std::string buffer) {
-  s.execute(buffer.c_str());
+void rcpp_ctx_exec(std::string buffer) {
+  ctx.execute(buffer.c_str());
 }
 
-//' @export
 //[[Rcpp::export]]
-std::string get(std::string param) {
-  CScriptVar *out = s.root->getParameter(param.c_str());
+std::string rcpp_get(std::string param) {
+  CScriptVar *out = ctx.root->getParameter(param.c_str());
   std::ostringstream symbols;
   out->getJSON(symbols);
   return(symbols.str());

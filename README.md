@@ -3,48 +3,74 @@
 
 The following functions are implemented:
 
--   `init`
--   `exec`
--   `get`
+-   `source_js` : source a javascript file
+-   `eval_js` : evaluate javascript strings
+-   `js_get` : get javascript objects
 
 The following data sets are included:
 
+-   `system.file("js/test001.js", package="tinyjs")`
+-   `system.file("js/test002.js", package="tinyjs")`
+-   `system.file("js/test003.js", package="tinyjs")`
+-   `system.file("js/test004.js", package="tinyjs")`
+-   `system.file("js/test005.js", package="tinyjs")`
+-   `system.file("js/test006.js", package="tinyjs")`
+-   `system.file("js/test007.js", package="tinyjs")`
+
 ### News
 
+-   Version 0.2.0.9000 released
 -   Version 0.1.0.9000 released
 
 ### Installation
 
 ``` r
-devtools::install_github("brudis-r7/tinyjs")
+devtools::install_github("hrbrmstr/tinyjs")
+
+eval_js("var a=10;")
+js_get("a")
+
+eval_js("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
+js_get("b")
 ```
 
 ### Usage
 
 ``` r
 library(tinyjs)
-#> 
-#> Attaching package: 'tinyjs'
-#> 
-#> The following object is masked from 'package:base':
-#> 
-#>     get
 
 # current verison
 packageVersion("tinyjs")
-#> [1] '0.1.0.9000'
+#> [1] '0.2.0.9000'
 
 library(tinyjs)
 
-init()
+eval_js("var a=10;")
+js_get("a")
+#> [1] 10
 
-exec("var a=10;")
-get("a")
-#> [1] "10"
+eval_js("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
+js_get("b")
+#> $this
+#> [1] "that"
+#> 
+#> $or
+#> [1] 4
+#> 
+#> $the
+#> [1] "ot" "he" "r"
 
-exec("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
-get("b")
-#> [1] "{ \n  \"this\" : \"that\",\n  \"or\" : 4,\n  \"the\" : [\n\"ot\",\n\"he\",\n\"r\"\n  ]\n}"
+for(js_fil in sprintf("js/test00%d.js", 1:7)) {
+  source_js(system.file(js_fil, package="tinyjs"))
+  print(js_get("result"))
+}
+#> [1] 1
+#> [1] 42
+#> [1] 45
+#> [1] 1
+#> [1] 45
+#> [1] 9
+#> [1] 9
 ```
 
 ### Test Results
@@ -54,7 +80,7 @@ library(tinyjs)
 library(testthat)
 
 date()
-#> [1] "Tue Apr  5 10:56:35 2016"
+#> [1] "Tue Apr  5 14:36:14 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================

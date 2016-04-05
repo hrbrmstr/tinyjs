@@ -1,6 +1,6 @@
 Package: tinyjs
 Title: R pkg interface to tiny-js
-Version: 0.1.0.9000
+Version: 0.2.0.9000
 Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")))
 Description: R pkg interface to tiny-js
 Depends:
@@ -11,4 +11,6 @@ Suggests:
     testthat
 RoxygenNote: 5.0.1
 LinkingTo: Rcpp
-Imports: Rcpp
+Imports:
+  Rcpp,
+  jsonlite

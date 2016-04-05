@@ -9,6 +9,6 @@
 tinyjs ...
 }
 \author{
-Bob Rudis (@brudis-r7)
+Bob Rudis (@hrbrmstr)
 }
 

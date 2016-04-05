@@ -5,33 +5,33 @@
 
 using namespace Rcpp;
 
-// init
-void init();
-RcppExport SEXP tinyjs_init() {
+// rcpp_ctx_init
+void rcpp_ctx_init();
+RcppExport SEXP tinyjs_rcpp_ctx_init() {
 BEGIN_RCPP
     Rcpp::RNGScope __rngScope;
-    init();
+    rcpp_ctx_init();
     return R_NilValue;
 END_RCPP
 }
-// exec
-void exec(std::string buffer);
-RcppExport SEXP tinyjs_exec(SEXP bufferSEXP) {
+// rcpp_ctx_exec
+void rcpp_ctx_exec(std::string buffer);
+RcppExport SEXP tinyjs_rcpp_ctx_exec(SEXP bufferSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< std::string >::type buffer(bufferSEXP);
-    exec(buffer);
+    rcpp_ctx_exec(buffer);
     return R_NilValue;
 END_RCPP
 }
-// get
-std::string get(std::string param);
-RcppExport SEXP tinyjs_get(SEXP paramSEXP) {
+// rcpp_get
+std::string rcpp_get(std::string param);
+RcppExport SEXP tinyjs_rcpp_get(SEXP paramSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< std::string >::type param(paramSEXP);
-    __result = Rcpp::wrap(get(param));
+    __result = Rcpp::wrap(rcpp_get(param));
     return __result;
 END_RCPP
 }
