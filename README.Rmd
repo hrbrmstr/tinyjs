@@ -14,7 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-`tinyjs` - R pkg wrapper to <https://github.com/gfwilliams/tiny-js>
+`tinyjs` - Lightweight Embedded JavaScript Engine (a wrapper for [TinyJS](https://github.com/gfwilliams/tiny-js))
+
+An R interface to the 'TinyJS' — <https://github.com/gfwilliams/tiny-js> — JavaScript engine; a more lightweight alternative to 'V8' with no external dependencies.
 
 The following functions are implemented:
 

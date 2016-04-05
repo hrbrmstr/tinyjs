@@ -1,11 +1,12 @@
 Package: tinyjs
-Title: R pkg interface to tiny-js
+Title: Lightweight Embedded JavaScript Engine
 Version: 0.2.0.9000
 Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")))
-Description: R pkg interface to tiny-js
+Description: An R interface to the 'TinyJS' <https://github.com/gfwilliams/tiny-js>
+    JavaScript engine; a more lightweight alternative to 'V8' with no external dependencies.
 Depends:
     R (>= 3.0.0)
-License: AGPL + file LICENSE
+License: MIT + file LICENSE
 LazyData: true
 Suggests:
     testthat

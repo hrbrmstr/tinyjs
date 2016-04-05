@@ -1,5 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-`tinyjs` - R pkg wrapper to <https://github.com/gfwilliams/tiny-js>
+`tinyjs` - Lightweight Embedded JavaScript Engine (a wrapper for [TinyJS](https://github.com/gfwilliams/tiny-js))
+
+An R interface to the 'TinyJS' — <https://github.com/gfwilliams/tiny-js> — JavaScript engine; a more lightweight alternative to 'V8' with no external dependencies.
 
 The following functions are implemented:
 
@@ -73,7 +75,7 @@ library(tinyjs)
 library(testthat)
 
 date()
-#> [1] "Tue Apr  5 17:51:46 2016"
+#> [1] "Tue Apr  5 17:57:07 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
