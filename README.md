@@ -26,12 +26,6 @@ The following data sets are included:
 
 ``` r
 devtools::install_github("hrbrmstr/tinyjs")
-
-eval_js("var a=10;")
-js_get("a")
-
-eval_js("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
-js_get("b")
 ```
 
 ### Usage
@@ -80,7 +74,7 @@ library(tinyjs)
 library(testthat)
 
 date()
-#> [1] "Tue Apr  5 14:36:14 2016"
+#> [1] "Tue Apr  5 14:37:04 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================

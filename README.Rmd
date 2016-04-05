@@ -41,13 +41,6 @@ The following data sets are included:
 
 ```{r eval=FALSE}
 devtools::install_github("hrbrmstr/tinyjs")
-
-eval_js("var a=10;")
-js_get("a")
-
-eval_js("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
-js_get("b")
-
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
