@@ -32,8 +32,13 @@
 #include <math.h>
 #include <cstdlib>
 #include <sstream>
+#include <random>
+#include <time.h>
 
 using namespace std;
+
+std::minstd_rand simple_rand;
+
 // ----------------------------------------------- Actual Functions
 void scTrace(CScriptVar *c, void *userdata) {
     CTinyJS *js = (CTinyJS*)userdata;
@@ -50,13 +55,15 @@ void scObjectClone(CScriptVar *c, void *) {
 }
 
 void scMathRand(CScriptVar *c, void *) {
-    c->getReturnVar()->setDouble((double)rand()/RAND_MAX);
+    simple_rand.seed(time (NULL));
+    c->getReturnVar()->setDouble((double)simple_rand()/RAND_MAX);
 }
 
 void scMathRandInt(CScriptVar *c, void *) {
+    simple_rand.seed(time (NULL));
     int min = c->getParameter("min")->getInt();
     int max = c->getParameter("max")->getInt();
-    int val = min + (int)(rand()%(1+max-min));
+    int val = min + (int)(simple_rand()%(1+max-min));
     c->getReturnVar()->setInt(val);
 }
 

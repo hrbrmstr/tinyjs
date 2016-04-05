@@ -19,7 +19,8 @@ The following data sets are included:
 
 ### News
 
--   Version 0.2.0.9000 released
+-   Version 0.2.5.9000 99.9% CRAN checks & added tests + built w/`build_win()`
+-   Version 0.2.0.9000 cleaner API
 -   Version 0.1.0.9000 released
 
 ### Installation
@@ -36,8 +37,6 @@ library(tinyjs)
 # current verison
 packageVersion("tinyjs")
 #> [1] '0.2.0.9000'
-
-library(tinyjs)
 
 eval_js("var a=10;")
 js_get("a")
@@ -74,11 +73,11 @@ library(tinyjs)
 library(testthat)
 
 date()
-#> [1] "Tue Apr  5 14:37:04 2016"
+#> [1] "Tue Apr  5 17:51:46 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
-#> OK: 0 SKIPPED: 0 FAILED: 0
+#> OK: 1 SKIPPED: 0 FAILED: 0
 ```
 
 ### Code of Conduct

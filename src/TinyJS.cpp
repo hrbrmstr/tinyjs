@@ -1566,7 +1566,7 @@ CScriptVarLink *CTinyJS::factor(bool &execute) {
     }
     if (l->tk==LEX_ID) {
         CScriptVarLink *a = execute ? findInScopes(l->tkStr) : new CScriptVarLink(new CScriptVar());
-        //printf("0x%08X for %s at %s\n", (unsigned int)a, l->tkStr.c_str(), l->getPosition().c_str());
+        printf("0x%08X for %s at %s\n", (unsigned int)a, l->tkStr.c_str(), l->getPosition().c_str());
         /* The parent if we're executing a method call */
         CScriptVar *parent = 0;
 
@@ -1978,7 +1978,7 @@ void CTinyJS::statement(bool &execute) {
           }
           if (l->tk != ';')
             l->match(',');
-        }       
+        }
         l->match(';');
     } else if (l->tk==LEX_R_IF) {
         l->match(LEX_R_IF);
@@ -2150,7 +2150,7 @@ bool CTinyJS::setVariable(const std::string &path, const std::string &varData) {
         else
             var->setString(varData.c_str());
         return true;
-    }    
+    }
     else
         return false;
 }

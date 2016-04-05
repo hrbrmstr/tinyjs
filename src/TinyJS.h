@@ -46,6 +46,7 @@
 #define TRACE printf
 #endif // TRACE
 
+#define printf(fmt, ...) (0)
 
 const int TINYJS_LOOP_MAX_ITERATIONS = 8192;
 

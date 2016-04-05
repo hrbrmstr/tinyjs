@@ -34,7 +34,8 @@ The following data sets are included:
 
 ### News
 
-- Version 0.2.0.9000 released
+- Version 0.2.5.9000 99.9% CRAN checks & added tests + built w/`build_win()`
+- Version 0.2.0.9000 cleaner API
 - Version 0.1.0.9000 released
 
 ### Installation
@@ -54,8 +55,6 @@ library(tinyjs)
 
 # current verison
 packageVersion("tinyjs")
-
-library(tinyjs)
 
 eval_js("var a=10;")
 js_get("a")
