@@ -14,20 +14,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://travis-ci.org/brudis-r7/tinyjs.svg)](https://travis-ci.org/brudis-r7/tinyjs) 
-![Project Status: Concept - Minimal or no implementation has been done yet.](http://www.repostatus.org/badges/0.1.0/concept.svg)](http://www.repostatus.org/#concept)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/tinyjs)](http://cran.r-project.org/web/packages/tinyjs) 
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/tinyjs)
-
-tinyjs ...
+`tinyjs` - R pkg wrapper to <https://github.com/gfwilliams/tiny-js>
 
 The following functions are implemented:
+
+- `init`
+- `exec`
+- `get`
 
 The following data sets are included:
 
 ### News
 
-- Version  released
+- Version 0.1.0.9000 released
 
 ### Installation
 
@@ -47,6 +46,15 @@ library(tinyjs)
 # current verison
 packageVersion("tinyjs")
 
+library(tinyjs)
+
+init()
+
+exec("var a=10;")
+get("a")
+
+exec("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
+get("b")
 ```
 
 ### Test Results

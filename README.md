@@ -1,66 +1,66 @@
----
-output:
-  md_document:
-    variant: markdown_github
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-
-[![Build Status](https://travis-ci.org/brudis-r7/tinyjs.svg)](https://travis-ci.org/brudis-r7/tinyjs) 
-![Project Status: Concept - Minimal or no implementation has been done yet.](http://www.repostatus.org/badges/0.1.0/concept.svg)](http://www.repostatus.org/#concept)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/tinyjs)](http://cran.r-project.org/web/packages/tinyjs) 
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/tinyjs)
-
-tinyjs ...
+`tinyjs` - R pkg wrapper to <https://github.com/gfwilliams/tiny-js>
 
 The following functions are implemented:
+
+-   `init`
+-   `exec`
+-   `get`
 
 The following data sets are included:
 
 ### News
 
-- Version  released
+-   Version 0.1.0.9000 released
 
 ### Installation
 
-
-```r
+``` r
 devtools::install_github("brudis-r7/tinyjs")
 ```
 
-
-
 ### Usage
 
-
-```r
+``` r
 library(tinyjs)
-#> Error in library(tinyjs): there is no package called 'tinyjs'
+#> 
+#> Attaching package: 'tinyjs'
+#> 
+#> The following object is masked from 'package:base':
+#> 
+#>     get
 
 # current verison
 packageVersion("tinyjs")
-#> Error in packageVersion("tinyjs"): package 'tinyjs' not found
+#> [1] '0.1.0.9000'
+
+library(tinyjs)
+
+init()
+
+exec("var a=10;")
+get("a")
+#> [1] "10"
+
+exec("var b={this:'that', or:4, the:['ot', 'he', 'r']};")
+get("b")
+#> [1] "{ \n  \"this\" : \"that\",\n  \"or\" : 4,\n  \"the\" : [\n\"ot\",\n\"he\",\n\"r\"\n  ]\n}"
 ```
 
 ### Test Results
 
-
-```r
+``` r
 library(tinyjs)
-#> Error in library(tinyjs): there is no package called 'tinyjs'
 library(testthat)
-#> Loading required package: methods
 
 date()
-#> [1] "Tue Apr  5 09:22:37 2016"
+#> [1] "Tue Apr  5 10:56:35 2016"
 
 test_dir("tests/")
-#> Error in library(tinyjs): there is no package called 'tinyjs'
+#> testthat results ========================================================================================================
+#> OK: 0 SKIPPED: 0 FAILED: 0
 ```
 
 ### Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
-By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
